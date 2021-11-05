@@ -1,0 +1,24 @@
+.form-container{
+  border: 2px solid rgb(107,207,199);
+  border-radius: 10px;
+  /* align-items: center; */
+  margin-top: 10%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+} 
+
+.input-date{
+  margin-bottom: 20px;
+}
+
+.input-select{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-amount{
+  margin-bottom: 20px;
+  width: 90%;
+                           
+}

@@ -1,5 +1,24 @@
-.header{
+.page__header{
   font-family:'Times New Roman', Times, serif;
-  font-size: 50px;
-  background-color: rgb(91,197,167);
+  /* font-size: 50px; */
+  background-color: rgb(107,207,199);
+  text-align: center;
+}
+
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
+.navbar-img{ 
+  width: 3rem;
+  border-radius: 20px;
+}
+.navbar-link{
+  display: flex;
+}
+.navbar-container{
+  margin-left: 5%;
+}
+.navbar-text{
+  margin-left: 10px;
+  color:black;
 }
