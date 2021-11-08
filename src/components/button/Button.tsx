@@ -1,4 +1,5 @@
 import React from "react";
+import './Button.css';
 
 type ButtonProps = {
   label: string;
@@ -8,7 +9,7 @@ type ButtonProps = {
 
 function Button({ label, type = "button", onClick = () => {} }: ButtonProps) {
   return (
-    <button type={type} onClick={onClick}>
+    <button type={type} onClick={onClick} className="button">
       {label}
     </button>
   );

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import moment from "moment";
+import { createExpenses } from '../../../servises/expenses';
 import Button from '../../../components/button/Button';
-import { getPersons } from '../../../interfaces/PersonInterface';
+import { getPersons } from '../../../servises/persons';
 import './AddExpense.css';
 
 type FormElement = React.FormEvent<HTMLFormElement>
@@ -11,7 +12,7 @@ const AddExpense = () => {
   const nowDate = moment().format("YYYY-MM-DDTHH:mm");
   const history = useHistory();
 
-  const [friend, setFriend] = useState<string>("");
+  const [person, setPerson] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
   const [date, setDate] = useState(nowDate);
   const [description, setDescription] = useState<string>("");
@@ -19,9 +20,8 @@ const AddExpense = () => {
 
   const handleSubmit = (e: FormElement) => {
     e.preventDefault();
-    const expense = { friend, amount: parseFloat(amount), date, description };
-    //createExpenses(expense);
-    console.log(expense)
+    const expense = { person, amount: parseFloat(amount), date, description };
+    createExpenses(expense);
     history.push("/");
   }; 
 
@@ -41,14 +41,14 @@ const AddExpense = () => {
             <span>User</span>
             <select
               className='input-select'
-              onChange={(event) => setFriend(event.target.value)}
-              value={friend}
+              onChange={(event) => setPerson(event.target.value)}
+              value={person}
               required
             >
               <option value="" />
-              {getPersons().map((friend, idx) => (
-                <option value={friend} key={idx}>
-                  {friend}
+              {getPersons().map((person, idx) => (
+                <option value={person} key={idx}>
+                  {person}
                 </option>
               ))}
             </select>

@@ -1,20 +1,21 @@
 import React, { ChangeEvent, useState} from 'react';
-import { Link } from 'react-router-dom';
-import {createPerson, Person} from '../../../interfaces/PersonInterface';
+import { useHistory } from 'react-router-dom';
+import {createPerson} from '../../../servises/persons';
+import { Person } from '../../../interfaces/PersonInterface';
 import Button from '../../button/Button';
-
+import './AddPerson.css';
 type FormElement = React.FormEvent<HTMLFormElement>;
 
 interface Props {
   newGroup: (name: Person)=> void,
 }
 const initialState = {
-  name:'',
+  name:''
 }
 const AddPerson = ({newGroup} : Props) => {
 
   const [names, setNames] = useState(initialState);
-
+  const history = useHistory();
 const handleInputChange = ({
   target:{ name, value },
 }: ChangeEvent<HTMLInputElement> ) => {
@@ -22,32 +23,29 @@ const handleInputChange = ({
 
 }
 
-const handleNewGroup = (e: FormElement) => {
+const handleNewUser = (e: FormElement) => {
   e.preventDefault();
   createPerson(names.name);
-  newGroup(names)
-  setNames(initialState)
+  setNames(initialState);
+  history.push("/")
 }
-  // const handleSubmit = (e: FormElement) => {
-  //   e.preventDefault();
-  //   createPerson(names.name);
-  // }
 
   return(
-    <form onSubmit={handleNewGroup}>
-      <label>
-        Agrega Personas para crear un grupo
+    <form onSubmit={handleNewUser} className='form-container'>
+      <label className='label-addPerson'>
+        Escriba los nombres del grupo
       </label>
       <input
       name='name'
-      className=''
+      className='input-addPerson'
       placeholder='Name'
       required
       type='text'
       value={names.name}
       onChange={handleInputChange}
       />
-      <Button label='Add Person' type='submit'/>
+    
+      <Button label='Agrega amig@' type='submit'/>
     </form>
   )
 

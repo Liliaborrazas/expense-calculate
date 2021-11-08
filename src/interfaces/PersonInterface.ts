@@ -1,44 +1,11 @@
 export interface Person {
-  id?:number,
   name: string,
-
+  debts: Array<object>,
+  payments: Array<object>,
+  total_paid: number,
+  relative_debts: Array<object>
 }
 
-export type Expense = {
-  person: string;
-  amount: number;
-  date: string;
-  description: string;
-};
-
-export type ExpenseByUser = {
-  amount: number;
-  person: string;
-};
-
-export function getPersons(): string[] {
-  return getPerson_LocalStorage();
-}
-
-export function createPerson(name: string) {
-  const persons = getPerson_LocalStorage();
-  persons.push(name);
-  savePersons_LocalStorage(persons);
-}
-
-function getPerson_LocalStorage(): string[] {
-  const personsJson = localStorage.getItem("persons");
-  if (personsJson === null) {
-    return [];
-  }
-  return JSON.parse(personsJson);
-}
-
-function savePersons_LocalStorage(persons: string[]): void {
-  localStorage.setItem("persons", JSON.stringify(persons));
-}
-
- export function deletePerson_LocalStorage(persons:string) {
-  return localStorage.removeItem("persons")
-  
-}
+//debts cantidades que debe[{}]
+//total paid diferencia payment - debts
+//relative_debts esto es la exrtra
