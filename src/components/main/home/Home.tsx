@@ -10,16 +10,16 @@ import Persons from '../home/components/Persons'
 
 const Home = () => {
   return (
-    <div className=''>
-    <h1 className="welcome">Bienvenid@ a la app de gastos compartidos</h1>
-      <img src={photo} className='' alt="expense" />
+    <div className='home-container'>
+    <h1 className="home-welcome">Bienvenid@ a la app de gastos compartidos</h1>
+      <img src={photo} className='image-welcome' alt="expense" />
     <div className=''>
       {getPersons().length === 0 ? (
-        <div>
-       <p className=''>
+      <div>
+       <p className='home-text'>
       Crea tu grupo de gastos!
      </p>
-     <Link to="/add-person" className=''>
+     <Link to="/add-person" className='btn-addPerson'>
        <i className="fas fa-users" /> Añade amigos
      </Link>
      </div>

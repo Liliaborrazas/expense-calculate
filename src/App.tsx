@@ -25,7 +25,10 @@ const remover = JSON.stringify(localStorageRemuve)
         <Route path="/add-expense" component={AddExpense} />
         </main>
       </Switch>
+      <footer>
         <Footer/>
+      </footer>
+
     </Router>
   );
 }

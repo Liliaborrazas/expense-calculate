@@ -1,21 +1,19 @@
 import React, { ChangeEvent, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import {createPerson} from '../../../servises/persons';
-import { Person } from '../../../interfaces/PersonInterface';
 import Button from '../../button/Button';
 import './AddPerson.css';
 type FormElement = React.FormEvent<HTMLFormElement>;
 
-interface Props {
-  newGroup: (name: Person)=> void,
-}
+
 const initialState = {
   name:''
 }
-const AddPerson = ({newGroup} : Props) => {
+const AddPerson = () => {
 
-  const [names, setNames] = useState(initialState);
-  const history = useHistory();
+const [names, setNames] = useState(initialState);
+const history = useHistory();
+
 const handleInputChange = ({
   target:{ name, value },
 }: ChangeEvent<HTMLInputElement> ) => {

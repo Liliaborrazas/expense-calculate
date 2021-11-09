@@ -3,11 +3,9 @@ import './Footer.css';
 
 const Footer = () => {
   return(
-    <footer className='footer'>
-      <div>
+      <div className='footer'>
         @By Lilia Borrazás
       </div>
-    </footer>
   )
 }
 export default Footer;

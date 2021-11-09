@@ -7,15 +7,14 @@ function Persons() {
   return (
     <section className=''>
       <div className='section-wrapper__title'>
-        <h2 className='section-wrapper__text'>Lista de amigos</h2>
         <div className='section-wrapper'>
         <Link to="/add-person" className='link-name'>
           Agrega amig@s
         </Link>
       </div>
-      <div className='list-container'>
+      <div className='list-friends-container'>
         {getPersons().map((name, index) => (
-          <ul key={index} className='list'>
+          <ul key={index} className='list-friends'>
             <li className='list-item'>
               {name}
             </li>
@@ -23,7 +22,6 @@ function Persons() {
         ))}
         </div>
       </div>
-
     </section>
   );
 }

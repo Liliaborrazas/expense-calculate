@@ -1,0 +1,14 @@
+.expense-detail__container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  border-top: 2px solid rgb(107,207,199);;
+}
+.detail-person__date{
+  display: flex;
+  justify-content:space-between;
+}
+.item-person{
+  margin-right: 2rem;
+}

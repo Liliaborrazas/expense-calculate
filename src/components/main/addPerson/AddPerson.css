@@ -2,14 +2,9 @@
   border:none;
   display: flex;
   flex-direction: column;
-  /* width: 20%; */
   
 }
-.input-addPerson{
-  border-radius: 1rem; 
-  height: 1.5rem; 
-  padding-left: 10px;
-}
+
 .label-addPerson{
   color: black;
   text-align: center;

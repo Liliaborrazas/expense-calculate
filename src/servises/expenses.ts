@@ -2,7 +2,7 @@ import { getPersons } from "./persons";
 import { Expense, ExpenseByUser } from "../interfaces/ExpenseInterface";
 
 export function getExpenses(): Expense[] {
-  return getExpensesFromLocalStorage().sort((a, b) => {
+  return getExpensesLocalStorage().sort((a, b) => {
     if (a.date > b.date) {
       return -1;
     }
@@ -14,14 +14,14 @@ export function getExpenses(): Expense[] {
 }
 
 export function createExpenses(expense: Expense) {
-  const expenses = getExpensesFromLocalStorage();
+  const expenses = getExpensesLocalStorage();
   expenses.push(expense);
   saveExpensesInLocalStorage(expenses);
 }
 
 export function getExpensesTotal() {
   let total = 0;
-  for (let expense of getExpensesFromLocalStorage()) {
+  for (let expense of getExpensesLocalStorage()) {
     total += expense.amount;
   }
   return total;
@@ -37,7 +37,7 @@ export function getExpensesByUser(): ExpenseByUser[] {
     expensesByUserMap[person] = 0;
   }
 
-  for (let expense of getExpensesFromLocalStorage()) {
+  for (let expense of getExpensesLocalStorage()) {
     expensesByUserMap[expense.person] += expense.amount;
   }
 
@@ -52,7 +52,7 @@ export function getExpensesByUser(): ExpenseByUser[] {
   return result;
 }
 
-function getExpensesFromLocalStorage(): Expense[] {
+function getExpensesLocalStorage(): Expense[] {
   const expensesJson = localStorage.getItem("expenses");
   if (expensesJson === null) {
     return [];

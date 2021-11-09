@@ -38,7 +38,7 @@ const AddExpense = () => {
             onChange={(event) => setDate(event.target.value)}
           />
           <label className=''>
-            <span>User</span>
+            <span>Nombre</span>
             <select
               className='input-select'
               onChange={(event) => setPerson(event.target.value)}
@@ -55,7 +55,7 @@ const AddExpense = () => {
           </label>
 
           <label className=''>
-            <span>Amount</span>
+            <span>Gasto</span>
             <div className=''>
               <input
                 className='input-amount'
@@ -63,26 +63,25 @@ const AddExpense = () => {
                 type="number"
                 min="0.01"
                 step="0.01"
-                placeholder="0.0"
+                placeholder="0.0 €"
                 value={amount}
                 onChange={(event) => setAmount(event.target.value)}
               />
-              <span className=''>€</span>
             </div>
           </label>
 
           <label className=''>
-            <span>Concept</span>
+            <span>Concepto</span>
             <input
-              placeholder="Restaurant"
-              className='input-select'
+              placeholder="Concepto"
+              className='input-text'
               required
-              type="textarea"
+              type="text"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
             />
           </label>
-          <Button label="Add" type="submit" />
+          <Button label="Agregar" type="submit" />
     </form>
     </div>
   )
