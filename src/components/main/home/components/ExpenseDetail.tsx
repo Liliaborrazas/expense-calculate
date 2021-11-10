@@ -1,4 +1,3 @@
-import React from "react";
 import { Expense } from "../../../../interfaces/ExpenseInterface";
 import Moment from "react-moment";
 import { formatMoney } from "../../../../servises/expenses";

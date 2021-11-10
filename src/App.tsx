@@ -1,22 +1,21 @@
-import React from 'react';
 import './App.css';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './components/main/home/Home';
-import {deleteLocalStorage,getPersons} from './servises/persons';
+import {deleteLocalStorage} from './servises/persons';
 import AddExpense from './components/main/addExpenses/AddExpense';
 import Footer from './components/footer/Footer';
 import AddPerson from './components/main/addPerson/AddPerson';
 
 function App() {
 
-const localStorageRemuve = getPersons();
-const remover = JSON.stringify(localStorageRemuve)
+// const localStorageRemuve = getPersons();
+// const remover = JSON.stringify(localStorageRemuve)
 
   return (
     <Router>
        <header>
-         <Header title='Expense calculate' onClick={()=>deleteLocalStorage(remover)}/>
+         <Header title='Expense calculate' onClick={()=>deleteLocalStorage()}/>
        </header>
       <Switch>
       <main className='page__main'>
@@ -28,7 +27,6 @@ const remover = JSON.stringify(localStorageRemuve)
       <footer>
         <Footer/>
       </footer>
-
     </Router>
   );
 }

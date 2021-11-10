@@ -1,4 +1,7 @@
-
+.section-balances{
+  margin-left: 7rem;
+  margin-right: 7rem;
+}
 .balances-container__item{
   display: flex;
   justify-content: center;

@@ -27,6 +27,9 @@ export function getExpensesTotal() {
   return total;
 }
 
+//Balance
+//gasto de la persona - el total de gastos dividido la cantidad de personas
+ 
 export function getExpensesByUser(): ExpenseByUser[] {
   const persons = getPersons();
 
