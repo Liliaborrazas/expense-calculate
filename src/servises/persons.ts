@@ -22,7 +22,7 @@ function savePersonsLocalStorage(persons: PersonName[]): void {
 
 }
 
- export function deleteLocalStorage() {
+ export function deletePersonsExpensesInLocalStorage() {
    let deleteLocalStorage = localStorage.removeItem('persons');localStorage.removeItem('expenses')
   return deleteLocalStorage;
   
